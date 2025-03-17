@@ -239,4 +239,36 @@ Estamos construindo aqui a seção de conteúdo do nosso site.
 - **`column-gap: 1%;`** → Define o espaçamento entre as colunas.
 - **`row-gap: 5%;`** → Define o espaçamento entre as linhas.
 
-## Aula 7 - Layout responsivo 
+## Aula 7 - Layout Responsivo
+
+Para construir o layout responsivo, começamos a trabalhar com **media queries**, que são regras CSS aplicadas apenas quando determinadas condições são atendidas. No caso da aula, as media queries foram acionadas quando a tela alcançava um valor mínimo ou máximo de largura.
+
+### CSS 7
+```CSS
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+```
+
+A partir disso, criamos regras específicas para que, dependendo do dispositivo, o conteúdo ficasse melhor disposto.
+
+### 📌 Propriedades mais comuns para celulares:
+🔹 **display: block;** (Elementos em linha passam a ocupar toda a largura)  
+🔹 **display: flex; flex-direction: column;** (Alinha elementos em coluna no mobile)  
+🔹 **max-width: 100%; height: auto;** (Para imagens responsivas)  
+🔹 **font-size: rem;** (Texto que se ajusta automaticamente)  
+🔹 **@media (max-width: 768px) {}** (Para estilos específicos de celular)  
+🔹 **overflow-x: hidden;** (Evita rolagem horizontal)  
+🔹 **background-size: cover;** (Imagens de fundo responsivas)  
+
+### 📌 Propriedades mais comuns para tablets:
+🔹 **Use @media (max-width: 1024px)** para definir estilos para tablets.  
+🔹 **Ajuste width: 90% e max-width: 100%** para manter elementos proporcionais.  
+🔹 **Use display: flex e grid-template-columns** para reorganizar layouts.  
+🔹 **Reduza fontes com font-size: 1.2rem;** para melhor legibilidade.  
+🔹 **Ajuste imagens com object-fit: cover;** para evitar distorções.  
+🔹 **Aumente a área de clique dos botões** para melhorar a usabilidade.  
