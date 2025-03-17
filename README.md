@@ -6,6 +6,7 @@
 [Aula 4 - Trabalhando com imagens responsivas](#aula-4---trabalhando-com-imagens-responsivas)  
 [Aula 5 - Menu Dropdown](#aula-5---menu-dropdown)  
 [Aula 6 - CSS Grid](#aula-6---display-grid)  
+[Aula 7 - Layout responsivo](#aula-7---layout-responsivo)  
 
 ## Aula 1 - Utilizando o Viewport
 O **viewport** é a área visível de um site dentro da janela do navegador. Podemos ajustar seus parâmetros para melhorar a experiência do usuário.
@@ -178,40 +179,43 @@ Faz com que o submenu comece o mais à esquerda possível dentro do menu.
 Inicialmente, me perguntei por que usar essas duas propriedades em vez de definir a cor diretamente no `.menu li:hover`. Depois, percebi que, sem a borda transparente antes, haveria um deslocamento do elemento ao passar o mouse por cima, modificando o design de forma indesejada.
 
 ## Aula 6 - Display Grid
+
 ### HTML 6
-```HTML
- <div class="conteudo">
-       <main>
-            <section class="destaque">
-                <h2>Em destaque</h2>
-                <article class="noticia">
-                    <a href="#">
-                        <img src="https://placehold.co/320x320" alt="placeholder 320x320">
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quibusdam ea vero eos soluta tenetur.</h3>
-                    </a>
-                </article>
-            </section>
-        </main>
-        <aside>
-            
-        </aside>
-    </div>
+```html
+<div class="conteudo">
+    <main>
+        <section class="destaque">
+            <h2>Em destaque</h2>
+            <article class="noticia">
+                <a href="#">
+                    <img src="https://placehold.co/320x320" alt="placeholder 320x320">
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quibusdam ea vero eos soluta tenetur.</h3>
+                </a>
+            </article>
+        </section>
+    </main>
+    <aside>
+    </aside>
+</div>
 ```
-Estamos construindo aqui a sessão de conteúdo do nosso site.
-- `main` - representa o conteúdo principal do site. (centralizado)
-- `aside` - representa o conteúdo secundário. (bordas)
-- `lorem10` - Define o tamanho do lorem, no caso o número vai definir a quantidade de palavras.
-- `<img src="https://placehold.co/320x320" alt="placeholder 320x320">` - Nesse src estamos usando uma imagem placeholder, que tem a dimensão da imagem que vamos usar no design final, bom os elementos vão ficar disposotos. Se colocarmos esse site, qualquer tamanho que colocarmos depois da / vai ser o tamamnho da imagem que vamos receber
+Estamos construindo aqui a seção de conteúdo do nosso site.
+
+- **`<main>`** → Representa o conteúdo principal do site (centralizado).
+- **`<aside>`** → Representa o conteúdo secundário (nas bordas).
+- **`lorem10`** → Define o tamanho do texto gerado pelo **Lorem Ipsum**. O número define a quantidade de palavras.
+- **`<img src="https://placehold.co/320x320" alt="placeholder 320x320">`** → Neste `src`, estamos usando uma imagem placeholder. Ela tem a dimensão da imagem que será utilizada no design final, permitindo visualizar a disposição dos elementos corretamente. No site `placehold.co`, qualquer tamanho especificado após `/` será o tamanho da imagem retornada.
+
+---
 
 ### CSS 6
-```CSS
+```css
 .submenu {
-    background-color: #fff
+    background-color: #fff;
 }
 
 .conteudo {
     display: grid;
-    grid-template-columns: 70% 30% ;
+    grid-template-columns: 70% 30%;
 }
 
 .noticias {
@@ -221,13 +225,18 @@ Estamos construindo aqui a sessão de conteúdo do nosso site.
     row-gap: 5%;
 }
 ```
-- `background-color: #fff` - adicionamos cor de fundo para ficar mais legível.
-- `display: flex;` - bom para trabalhar com uma dimensão (linha ou coluna)
-- `display: grid;`- bom para trabalhar com duas dimensões (linhas e colunas)
-- `grid-template-columns: ;` podemos trabalhar com valores fixos e flexiveis (colunas)
-- `grid-template-rows: ;`valores fixos ou flexíveis (linhas)
-- `fr` -> O fr ajusta o tamanho conforme o espaço disponível do container, sem se basear em fontes ou elementos pai.
-- `grid-template-columns: 70% 30% ;` no caso no exemplo utilizado os dois elementos do conteúdo "em destaque" vai ocupar 70% do container e "novidades" vai ocupar 30% do container que sobrou, dando um bom contraste entre o conteúdo principal e secundário.
-- `grid-template-columns: repeat(3, 32.6%);` - essa parte do repeat é pra não ficar só repetindo o mesmo valor, `repeat(qtd_colunas, espaço ocupado)`
-- `column-gap: 1%;` - espaço entre as colunas
-- `row-gap: 5%;` - espaço entre as linhas 
+
+### Explicação do Código CSS:
+
+- **`background-color: #fff;`** → Define uma cor de fundo branca para melhor legibilidade.
+- **`display: flex;`** → Ideal para layouts **unidimensionais** (linha ou coluna).
+- **`display: grid;`** → Melhor para trabalhar com **duas dimensões** (linhas e colunas).
+- **`grid-template-columns:`** → Define o número e o tamanho das colunas, podendo ser valores fixos ou flexíveis.
+- **`grid-template-rows:`** → Define o número e o tamanho das linhas, podendo ser valores fixos ou flexíveis.
+- **`fr`** → Unidade de medida do Grid, ajusta o tamanho conforme o espaço disponível do container, sem depender do tamanho da fonte ou do elemento pai.
+- **`grid-template-columns: 70% 30%;`** → No exemplo, os elementos do conteúdo "Em destaque" ocupam **70%** do container, enquanto "Novidades" ocupa os **30%** restantes, criando um bom contraste entre o conteúdo principal e o secundário.
+- **`grid-template-columns: repeat(3, 32.6%);`** → `repeat(qtd_colunas, espaço ocupado)` evita repetição manual de valores, tornando o código mais limpo.
+- **`column-gap: 1%;`** → Define o espaçamento entre as colunas.
+- **`row-gap: 5%;`** → Define o espaçamento entre as linhas.
+
+## Aula 7 - Layout responsivo 
